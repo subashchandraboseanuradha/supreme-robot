@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<robot name="ROS2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find ROS2_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find ROS2_description)/urdf/ROS2.ros2control" />
+<xacro:include filename="$(find ROS2_description)/urdf/ROS2.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.0002500328650580711 -0.00011734629370466364 0.0780053653961204" rpy="0 0 0"/>
+    <mass value="1.9745255969487336"/>
+    <inertia ixx="0.022181" iyy="0.02888" izz="0.045008" ixy="0.0" iyz="2e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ROS2_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ROS2_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_1">
+  <inertial>
+    <origin xyz="0.0013913385630233144 -0.010565277271075826 0.002111075671382634" rpy="0 0 0"/>
+    <mass value="0.006742869651497777"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.169576 -0.011593 -0.082626" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ROS2_description)/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.169576 -0.011593 -0.082626" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ROS2_description)/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="-0.04439643739302415 -0.027996970282328615 0.02241059785378538" rpy="0 0 0"/>
+    <mass value="0.4315235077803805"/>
+    <inertia ixx="0.000184" iyy="0.000384" izz="0.000439" ixy="-2e-06" iyz="1e-06" ixz="-2.8e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.143701 -0.025838 -0.13" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ROS2_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.143701 -0.025838 -0.13" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ROS2_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_wheel_1">
+  <inertial>
+    <origin xyz="-9.370492510693494e-05 -0.02857693978856879 -0.0010541780312682755" rpy="0 0 0"/>
+    <mass value="0.09336596112441559"/>
+    <inertia ixx="0.000115" iyy="0.000206" izz="0.000117" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.000151 0.142653 -0.0555" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ROS2_description)/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.000151 0.142653 -0.0555" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ROS2_description)/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_wheel__1">
+  <inertial>
+    <origin xyz="6.323127441063589e-08 0.028051127252530617 -1.5084832620110289e-06" rpy="0 0 0"/>
+    <mass value="0.09525338804025144"/>
+    <inertia ixx="0.000118" iyy="0.000211" izz="0.000118" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.000151 -0.142347 -0.0555" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ROS2_description)/meshes/left_wheel__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.000151 -0.142347 -0.0555" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ROS2_description)/meshes/left_wheel__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_wheel_1">
+  <inertial>
+    <origin xyz="6.269272904659744e-08 -2.0999408251577787e-07 -0.011032508020863419" rpy="0 0 0"/>
+    <mass value="0.05846238952464058"/>
+    <inertia ixx="1.3e-05" iyy="1.3e-05" izz="2.1e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.000151 0.000153 -0.03" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ROS2_description)/meshes/caster_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.000151 0.000153 -0.03" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ROS2_description)/meshes/caster_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="camera_joint" type="fixed">
+  <origin xyz="0.169576 0.011593 0.082626" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="camera_1"/>
+</joint>
+
+<joint name="lidar_joint" type="fixed">
+  <origin xyz="0.143701 0.025838 0.13" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="right_wheel_joint" type="continuous">
+  <origin xyz="-0.000151 -0.142653 0.0555" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_wheel_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="left_wheel_joint" type="continuous">
+  <origin xyz="-0.000151 0.142347 0.0555" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_wheel__1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="caster_wheel_joint" type="fixed">
+  <origin xyz="-0.000151 -0.000153 0.03" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="caster_wheel_1"/>
+</joint>
+
+</robot>
